@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    
-    <head>
-
-    <!-- Basic -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-   
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
- 
-     <!-- Site Metas -->
-    <title>TaqwaBsharat Portfolio</title>  
-    <meta name="keywords" content="portfolio">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
-<style>
-
-*------------------------------------------------------------------
+/*------------------------------------------------------------------
     Version: 1.0
 -------------------------------------------------------------------*/
 
@@ -55,8 +35,7 @@ html, body{
 }
 
 body.demos .section {
-
-    background-image: url(../static/imag/code-featured.jpg) repeat top center #f2f3f5;
+    background: url(images/bg.png) repeat top center #f2f3f5;
 }
 
 body.demos .section-title img {
@@ -152,6 +131,7 @@ h5 a:hover,
 h6 a:hover {
     opacity: .8
 }
+
 a {
     color: #222222;
     text-decoration: none;
@@ -406,102 +386,63 @@ a img.aligncenter {
 	color: ffffff;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
-
-.type-pause-button {
+.cd-words-wrapper {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+}
+.cd-words-wrapper b {
+  display: inline-block;
   position: absolute;
-  top: 150px;
+  white-space: nowrap;
+  left: 0;
+  top: 0;
 }
-.icon-pause-circle-fill:before {
-    content: "\e600";
-  font-size: 4em;
-  color: #666;
+.cd-words-wrapper b.is-visible {
+  position: relative;
 }
-.icon-play-circle-fill:before {
-    content: "\e601";
-   font-size: 4em;
-  color: #666;
+.no-js .cd-words-wrapper b {
+  opacity: 0;
 }
-a {
-  text-decoration: none;
+.no-js .cd-words-wrapper b.is-visible {
+  opacity: 1;
 }
 
-.title {
-	text-align: center;
-    padding: 30px 0px 40px;
+/* -------------------------------- 
+
+xclip 
+
+-------------------------------- */
+.cd-headline.clip span {
+  display: inline-block;
+  padding: .2em 0;
+  color: #ffffff;
+  font-size: 30px;
 }
-.title h5 {
-	color: #999
-}
-.white .title h5 {
-	color: #fff
-}
-.dynamic-title {
-	float: none;
-	margin: 0 auto;
-	display: table;
-	width: auto;
-	font-family: 'Roboto Slab', serif;
-	font-size: 38px;
-	line-height: 38px;
-	font-weight: 700;
-	margin-bottom: 20px;
+.cd-headline.clip span b{
 	text-transform: uppercase;
 }
-
-div#text-btn button {
-  position: absolute;
-  display: inline-block;
-  top: 200px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  color: #fff;
+.cd-headline.clip .cd-words-wrapper {
   overflow: hidden;
-  transition-delay: 0.2s;
-  transition: .3s background;
-  outline: none;
-  font-size: 15px;
-  font-family: 'Roboto Black','Helvetica',sans-serif;
-  font-weight: 300;
+  vertical-align: top;
 }
-div#text-btn button:hover {
-  background: rgba(0,0,0,0.5);
+.cd-headline.clip .cd-words-wrapper::after {
+  /* line */
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #aebcb9;
 }
-.pause-btn.transparent {
-    background: transparent;
+.cd-headline.clip b {
+  opacity: 0;
 }
-span.gold-title {
-    font-size: 38px !important;
-    margin: -10px 0;
-    color: #FFC11F;
+.cd-headline.clip b.is-visible {
+  opacity: 1;
 }
 
-
-
-
-
- -------------------------------- 
-
-
-/* -------------------------------- 
-
-xclip 
-
--------------------------------- */
-
-
-
-  
-/* java ................ */
-
-
-
-/* -------------------------------- 
-
-xclip 
-
--------------------------------- */
 
 #mainNav.navbar-shrink {
     padding-top: 10px;
@@ -733,12 +674,140 @@ xclip
 
 
 /*------------------------------------------------------------------
- 
+    PORTFOLIO
+-------------------------------------------------------------------*/
+
+.item-h2,
+.item-h1 {
+    height: 100% !important;
+    height: auto !important;
+}
+
+.isotope-item {
+    z-index: 2;
+    padding: 0;
+}
+
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+}
+
+.isotope,
+.isotope .isotope-item {
+    /* change duration value to whatever you like */
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+
+.isotope {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    transition-property: height, width;
+}
+
+.isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.portfolio-filter ul {
+    padding: 0;
+    z-index: 2;
+    display: block;
+    position: relative;
+    margin: 0;
+}
+
+.portfolio-filter ul li {
+    border-radius: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.portfolio-filter ul li:last-child:after {
+    content: "";
+}
+
+.portfolio-filter ul li .btn-dark {
+    box-shadow: none;
+    background-color: transparent;
+    border: 1px solid #e6e7e6 !important;
+    color: #1f1f1f;
+    font-weight: 400;
+    font-size: 13px;
+    padding: 10px 30px;
+}
+
+.da-thumbs {
+    list-style: none;
+    position: relative;
+    padding: 0;
+}
+
+.da-thumbs .pitem {
+    margin: 0;
+    padding: 15px;
+    position: relative;
+}
+
+.da-thumbs .pitem a,
+.da-thumbs .pitem a img {
+    display: block;
+    position: relative;
+}
+
+.da-thumbs .pitem a {
+    overflow: hidden;
+}
+
+.da-thumbs .pitem a div {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+}
+
+.da-thumbs .pitem a div h3 {
+    display: block;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 30px 15px;
+    text-transform: capitalize;
+    font-weight: normal;
+}
+
+.da-thumbs .pitem a div h3 small {
+    display: block;
+    color: #ffffff;
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.da-thumbs .pitem a div i {
+    background-color: #1f1f1f;
+    position: absolute;
+    color: #ffffff !important;
+    bottom: 0;
+    font-size: 15px;
+    z-index: 12;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
 
 /*------------------------------------------------------------------
     TESTIMONIALS
 -------------------------------------------------------------------*/
-
 
 .logos img {
     margin: auto;
@@ -1957,6 +2026,7 @@ select.mobile-device {
 
 
 /*# sourceMappingURL=bootstrap-select.css.map */
+
 .bootstrap-select > .btn {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     font-size: 15px;
@@ -2036,7 +2106,6 @@ select.mobile-device {
 /*------------------------------------------------------------------
     FOOTER
 -------------------------------------------------------------------*/
-
 
 .cac {
     background-color: #232323;
@@ -2209,373 +2278,193 @@ select.mobile-device {
 
 /* Changing the placeholder color */
 
-</style>
+.footer-distributed form input::-webkit-input-placeholder {
+    color: #999;
+}
 
-    <!-- Site Icons -->
-        <link rel="shortcut icon" href="/uploads/PicsArt_07-17-09.44.55.png" type="image/x-icon" />
-        <link rel="stylesheet" href="/css/fontawesome.min.css" />
-        <link rel="stylesheet" href="https://taqwa-albsharat.github.io/taqwa-Portfolio/" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="/style.css">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+.footer-distributed form input::-moz-placeholder {
+    opacity: 1;
+    color: #999;
+}
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-<body id="page-top" class="politics_version">
-
-    <!-- LOADER -->
-    <div id="preloader">
-        <div id="main-ld">
-			<div id="loader"></div>  
-		</div>
-    </div><!-- end loader -->
-    <!-- END LOADER -->
-	
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">
-			<img class="img-fluid" src="../imag/blog-header.jpg" alt="" />
-		</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger active" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About Me</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-            </li>
-        
-			<li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-	
-	<section id="home" class="main-banner parallaxie" style="background-image: url(../static/imag/code-featured.jpg);background-repeat: no-repeat;background-size:100%;">
-	
-			        
-			<link rel="stylesheet" href="https://i.icomoon.io/public/3db54d4e03/GarageSaleApp/style.css">
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="heading" style="height: 620px;">
-    <h1>hello, i'm Taqwa</h1>   
-    <h3 class="tt">I,m A </h3>
-       
-    <h3 class="tt">Freelancer</h3>
- 
-    <h3 class="tt" >Web Design</h3>
- 
-    <h3 class="tt">Web Developer</h3>
-  
- 
-             
-    
-    
-        
-            
-         
-        
-        </h3>
-      
-            </head>
-            <body>
-    
-    <style>
-        .tt{
-            color:rgb(248, 252, 255);
-             column-rule-width: 100px;
-             column-rule: ivory ;
-             position: relative;
-              animation: mymove 3s;
-              animation-fill-mode: forwards;
-        
-        }
-        @keyframes mymove {
-              from {top: 0px;}
-              to {top: 60px;}
-        }
-    </style>
+.footer-distributed form input:-ms-input-placeholder {
+    color: #999;
+}
 
 
+/* The magnify glass icon */
 
-</div>
+.footer-distributed form i {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    color: #999;
+    font-size: 18px;
+    margin-top: 6px;
+}
 
-    
+.footer-distributed .footer-company-name a{
+	color: #ffffff;
+}
+
+.footer-distributed .footer-company-name a:hover{
+	color: #cccccc;
+}
+
+/*------------------------------------------------------------------
+    MISC
+-------------------------------------------------------------------*/
+
+.dmtop.show {
+    bottom: 50px;
+}
+
+.progress {
+    background-color: #f2f3f5;
+    border-radius: 0;
+    box-shadow: none;
+    height: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.skills h3 {
+    color: #999999;
+    font-size: 15px;
+}
+
+.dmtop {
+    background-color: #3C3D41;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    line-height: 47px;
+    position: fixed;
+    bottom: -100px;
+    border-radius: 3px;
+    right: 50px;
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff !important;
+    cursor: pointer;
+    -webkit-transition: all .7s ease-in-out;
+    -moz-transition: all .7s ease-in-out;
+    -o-transition: all .7s ease-in-out;
+    -ms-transition: all .7s ease-in-out;
+    transition: all .7s ease-in-out;
+}
+
+.icon_wrap {
+    background-color: #1f1f1f;
+    width: 100px;
+    height: 100px;
+    display: block;
+    line-height: 100px;
+    font-size: 34px;
+    color: #ffffff;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.stat-wrap h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #999 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important:
+}
+
+.stat-wrap p {
+    font-size: 38px;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 300;
+    padding: 4px 0 0;
+    line-height: 1 !important:
+}
+
+#preloader {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #333333;
+    z-index: 11000;
+    position: fixed;
+    display: block
+}
 
 
-				
-  
-  <a href="#" title="Play video" class="type-pause-button">
-    <span class="icon-pause-circle-fill on" id="player"></span>
-  </a>
-  
-		</div>
+#main-ld {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  position: absolute;
+  top: calc(50% - 17px);
+  left: calc(50% - 35px);
+}
+#loader {
+  width: 70px;
+  height: 70px;
+  border-style: solid;
+  border-top-color: #FFF;
+  border-right-color: #FFF;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotate 3s ease-in-out infinite;
+  transform: rotate(-200deg)
+}
+@keyframes rotate {
+  0% { border-width: 10px; }
+  25% { border-width: 3px; }
+  50% { 
+    transform: rotate(115deg); 
+    border-width: 10px;
+  }
+  75% { border-width: 3px;}
+  100% { border-width: 10px;}
+}
 
-	</section>
+/*------------------------------------------------------------------
+    BUTTONS
+-------------------------------------------------------------------*/
 
-	<svg id="clouds" class="hidden-xs" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 85 100" preserveAspectRatio="none">
-        <path d="M-5 100 Q 0 20 5 100 Z
-            M0 100 Q 5 0 10 100
-            M5 100 Q 10 30 15 100
-            M10 100 Q 15 10 20 100
-            M15 100 Q 20 30 25 100
-            M20 100 Q 25 -10 30 100
-            M25 100 Q 30 10 35 100
-            M30 100 Q 35 30 40 100
-            M35 100 Q 40 10 45 100
-            M40 100 Q 45 50 50 100
-            M45 100 Q 50 20 55 100
-            M50 100 Q 55 40 60 100
-            M55 100 Q 60 60 65 100
-            M60 100 Q 65 50 70 100
-            M65 100 Q 70 20 75 100
-            M70 100 Q 75 45 80 100
-            M75 100 Q 80 30 85 100
-            M80 100 Q 85 20 90 100
-            M85 100 Q 90 50 95 100
-            M90 100 Q 95 25 100 100
-            M95 100 Q 100 15 105 100 Z">
-        </path>
-    </svg>
+.navbar-default .btn-light {
+    padding: 0 20px;
+    margin-left: 15px;
+}
 
-    <div id="about" class="section wb">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="message-box wow fadeInLeft">                        
-                        <h2>About Me.</h2>
-                        <p> I'm a Web Developer born and raised in <strong>Irbid, jordan</strong> adept in all stages of advanced web development. Knowledgeable in user interface, I Design, Develop and implement websites using HTML, CSS, JavaScript and other Frameworks, I can deliver a compatible website for different devices, browsers, and platforms. </p>
-                        
-                        <h3>SKILLS</h3>
-                        
-                        <div class="alert alert-primary" role="alert">
-                           HTML/5
-                          </div>
-                          <div class="alert alert-secondary" role="alert">
-                            CSS/3
-                          </div>
-                          <div class="alert alert-success" role="alert">
-                            BOOTSTRAP
-                          </div>
-                          <div class="alert alert-danger" role="alert">
-                            JQUERY
-                          </div>
-                          <div class="alert alert-warning" role="alert">
-                            C++
-                          </div>
-                          <div class="alert alert-info" role="alert">
-                            SMALL BASIC
-                          </div>
-                          <div class="alert alert-danger" role="alert">
-                            PYTHON
-                          </div>
-                          <div class="alert alert-dark" role="alert">
-                            FULL STACk DEVELOPER
-                          </div>
-                   <!--   <a href="/imag/CV TAQWA bisharatdecoding.docx/" target="_blank" class="sim-btn btn-hover-new" data-text="Download CV"><span>Download CV</span></a>
-                          <script>
-                            function myFunction() {
-                              var x = document.getElementsByClassName("example");
-                              x[0].innerHTML = "Hello World!";
-                            }
-                            </script>-->
-                            <!--<a class="input popsok" aria-label="Download file" href="/imag/CV TAQWA bisharatdecoding.docx">
-                                Download CV
-                            </a>-->
-            
-                        </div><!-- end messagebox -->
-                </div><!-- end ol -->
+.btn {
+    border: 0 !important;
+}
 
-                <div class="col-md-6">
-                    <div class="right-box-pro wow fadeInRight">
-                        <img src="../static/imag/comput.jpg" alt="" class="img-fluid img-rounded" >
-                    </div><!-- end media -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
-	
-    <div id="services" class="section lb">
-        <div class="container">
-            <div class="section-title text-left">
-                <h3>Services</h3>
-                <p>Here Is my services and what I can offer for you.</p>
-            </div><!-- end title -->
+.btn-light {
+    padding: 10px 40px;
+    font-size: 18px;
+    border: 2px solid #ffffff !important;
+    color: #ffffff;
+    background-color: transparent;
+}
 
-            <div class="row">
-				<div class="col-md-4">
-                    <div class="services-inner-box wow fadeInLeft">
-						<div class="ser-icon">
-                            
-                            <img src="../static/imag/laaap.jpg" class="card-img-top" alt="...">
-						</div>
-						<h2>Web Development</h2>
-						<p>Design a responsive web site for you .. With Html5 , CSS3 , Javascript , JQ and Bootstrap.</p>
-					</div>
-                </div><!-- end col -->
-                <div class="col-md-4">
-                    <div class="services-inner-box wow fadeInDown">
-						<div class="ser-icon">
-                            <img src="../static/imag/responsive.jpg" class="card-img-top" alt="...">
-							<i class="flaticon-development"></i>
-						</div>
-						<h2>Responsive Design</h2>
-						<p>I can design a 100% Responsive website compatible with all devices and platforms .</p>
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-4">
-                    <div class="services-inner-box wow fadeInRight">
-						<div class="ser-icon">
-                            <img src="../static/imag/pic.jpg" class="card-img-top" alt="...">
-							<i class="flaticon-process"></i>
-						</div>
-						<h2>Creative Design</h2>
-						<p>I Can Edit Your Current WebSite .. Like Color or Add A new Content To Make it Seem Better with SEO.</p>
-					</div>
-                </div><!-- end col -->
+.btn-dark {
+    padding: 13px 40px;
+    font-size: 18px;
+    border: 1px solid #ececec !important;
+    color: #1f1f1f;
+    background-color: transparent;
+}
 
-                <div class="col-md-4">
-                    <div class="services-inner-box wow fadeInLeft">
-						<div class="ser-icon">
-                            <i class="flaticon-discuss-issue"></i>
-                            <img src="../static/imag/sup.jpg" class="card-img-top" alt="...">
-						</div>
-						<h2>Support</h2>
-						<p>Support is availble if you want any changes in your website you can ask for it anytime.</p>
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-4">
-                    <div class="services-inner-box wow fadeInUp">
-						<div class="ser-icon">
-                            <i class="flaticon-idea"></i>
-                            <img src="../static/imag/idea.jpg" class="card-img-top" alt="...">
-						</div>
-						<h2>Web Idea</h2>
-						<p>I can turn your ideas to real projects with high quality and give you more ideas to make your website cool.</p>
-					</div>
-                </div><!-- end col -->
-				<div class="col-md-4">
-                    <div class="services-inner-box wow fadeInRight">
-						<div class="ser-icon">
-                            <i class="flaticon-idea-1"></i>
-                            <img src="../static/imag/reee.jpg" class="card-img-top" alt="...">
-						</div>
-						<h2>Retouch</h2>
-						<p>If You Have a Website And Want to Create A new Desgin For It I Can do That Easliy and In a Perfect Way.</p>
-					</div>
-                </div><!-- end col -->                
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
-	
-	-->
-			
-			
-
-    <div id="contact" class="section db " >
-        <style>
-            #contact{
-                background-image: url(../static/imag/gggray.jpg);
-                background-size: 100%;
-                background-repeat: no-repeat;
-            }
-        </style>
-    
-        <div class="container">
-            <div class="section-title text-left">
-                <h3>Contact</h3>
-                <p class="text-center">Keep In Touch</p>
-            </div><!-- end title -->
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="contact_form">
-                        <div id="message"></div>
-                        <form id="contactForm" name="sentMessage" novalidate="novalidate">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<input class="form-control" id="name" type="text" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name.">
-										<p class="help-block text-danger"></p>
-									</div>
-									<div class="form-group">
-										<input class="form-control" id="email" type="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email address.">
-										<p class="help-block text-danger"></p>
-									</div>
-									<div class="form-group">
-										<input class="form-control" id="phone" type="tel" placeholder="Your Phone" required="required" data-validation-required-message="Please enter your phone number.">
-										<p class="help-block text-danger"></p>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<textarea class="form-control" id="message" placeholder="Your Message" required="required" data-validation-required-message="Please enter a message."></textarea>
-										<p class="help-block text-danger"></p>
-									</div>
-								</div>
-								<div class="clearfix"></div>
-								<div class="col-lg-12 text-center">
-									<div id="success"></div>
-									<button id="sendMessageButton" class="sim-btn btn-hover-new" data-text="Send Message" type="submit">Send Message</button>
-								</div>
-							</div>
-						</form>
-                    </div>
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
-
-    <div class="copyrights">
-        <div class="container">
-            <div class="footer-distributed">
-                <div class="footer-left">
-                    <p class="footer-links">
-                        <a href="#home">Home</a>
-                        <a href="#about">About</a>
-                        
-                        <a href="#">Faq</a>
-                        <a href="#contact">Contact</a>
-                        
-                        <a href="tel:+96279808550">CALL NOW / What'sapp</a>
-                        <a href="mailto:taqwabisharat1993@yahoo.com">Email Me: taqwabisharat1993@yahoo.com</a>
-                    </p>
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2020 Design By : 
-					<a href="https://www.facebook.com/profile.php?id=100015744136630" target="_blank">Taqwa Al-Bsharat</a></p>
-                </div>
-            </div>
-        </div><!-- end container -->
-    </div><!-- end copyrights -->
-
-    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
-
-    <!-- ALL JS FILES -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-</body>
-</html>
+.btn-light:hover,
+.btn-light:focus {
+    border-color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.6);
+}
